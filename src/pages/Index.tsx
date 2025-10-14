@@ -18,14 +18,11 @@ const Index = () => {
             />
             <span className="text-2xl font-bold tracking-tight">EchoAI</span>
           </div>
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="flex items-center gap-8">
             <a href="#features" className="text-sm font-medium hover:text-primary transition-colors">Возможности</a>
             <a href="#pricing" className="text-sm font-medium hover:text-primary transition-colors">Тарифы</a>
             <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">Контакты</a>
           </nav>
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
-            Начать
-          </Button>
         </div>
       </header>
 
@@ -45,13 +42,9 @@ const Index = () => {
               EchoAI автоматически анализирует коммуникации ваших менеджеров, 
               выявляет проблемы и помогает повысить эффективность продаж
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <div className="flex justify-center pt-4">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg animate-glow">
                 Попробовать бесплатно
-              </Button>
-              <Button size="lg" variant="outline" className="border-2 px-8 py-6 text-lg font-semibold">
-                <Icon name="Play" className="mr-2" size={20} />
-                Смотреть демо
               </Button>
             </div>
           </div>
@@ -60,7 +53,7 @@ const Index = () => {
             {[
               { icon: "Phone", value: "10,000+", label: "звонков проанализировано" },
               { icon: "MessageSquare", value: "50,000+", label: "переписок обработано" },
-              { icon: "TrendingUp", value: "35%", label: "рост конверсии" }
+              { icon: "TrendingUp", value: "98%", label: "конверсии" }
             ].map((stat, i) => (
               <Card key={i} className="p-6 bg-card/50 backdrop-blur border-border hover:border-primary transition-all">
                 <Icon name={stat.icon} className="text-primary mb-4" size={32} />
@@ -132,100 +125,73 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Тарифные планы
+              Тарифный план
             </h2>
             <p className="text-xl text-muted-foreground">
-              Выберите план, который подходит вашему бизнесу
+              Простая и прозрачная модель оплаты
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Стартовый",
-                price: "9 990",
-                period: "месяц",
-                description: "Для небольших команд",
-                features: [
-                  "До 500 звонков в месяц",
-                  "Анализ переписок",
-                  "Базовая аналитика",
-                  "Email поддержка",
-                  "1 пользователь"
-                ],
-                popular: false
-              },
-              {
-                name: "Профессиональный",
-                price: "24 990",
-                period: "месяц",
-                description: "Для растущих компаний",
-                features: [
-                  "До 2000 звонков в месяц",
-                  "Расширенная аналитика",
-                  "Интеграция с CRM",
-                  "Приоритетная поддержка",
-                  "До 5 пользователей",
-                  "API доступ"
-                ],
-                popular: true
-              },
-              {
-                name: "Корпоративный",
-                price: "59 990",
-                period: "месяц",
-                description: "Для крупного бизнеса",
-                features: [
-                  "Неограниченно звонков",
-                  "Все возможности",
-                  "Персональный менеджер",
-                  "SLA 99.9%",
-                  "Неограниченно пользователей",
-                  "Кастомные интеграции"
-                ],
-                popular: false
-              }
-            ].map((plan, i) => (
-              <Card 
-                key={i} 
-                className={`p-8 relative ${
-                  plan.popular 
-                    ? 'border-2 border-primary bg-card/80 scale-105' 
-                    : 'bg-card/50 border-border'
-                } hover:border-primary transition-all`}
-              >
-                {plan.popular && (
-                  <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground">
-                    Популярный
-                  </Badge>
-                )}
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{plan.description}</p>
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-4xl font-bold">{plan.price}</span>
-                    <span className="text-muted-foreground">₽/{plan.period}</span>
+          <div className="max-w-2xl mx-auto">
+            <Card className="p-10 border-2 border-primary bg-card/80">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold mb-3">Pay-as-you-go</h3>
+                <p className="text-muted-foreground">Платите только за то, что используете</p>
+              </div>
+              
+              <div className="space-y-6 mb-8">
+                <div className="flex items-center justify-between p-4 bg-primary/5 rounded-lg">
+                  <div className="flex items-center gap-3">
+                    <Icon name="Zap" className="text-primary" size={24} />
+                    <span className="font-semibold">Подключение</span>
                   </div>
+                  <span className="text-2xl font-bold">10,000 ₽</span>
                 </div>
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, j) => (
-                    <li key={j} className="flex items-start gap-2">
-                      <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={18} />
-                      <span className="text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button 
-                  className={`w-full ${
-                    plan.popular 
-                      ? 'bg-primary hover:bg-primary/90' 
-                      : 'bg-muted hover:bg-muted/80'
-                  } font-semibold`}
-                >
-                  Выбрать план
-                </Button>
-              </Card>
-            ))}
+                
+                <div className="flex items-center justify-between p-4 bg-primary/5 rounded-lg">
+                  <div className="flex items-center gap-3">
+                    <Icon name="Phone" className="text-primary" size={24} />
+                    <span className="font-semibold">Анализ звонков</span>
+                  </div>
+                  <span className="text-2xl font-bold">2 ₽<span className="text-sm text-muted-foreground font-normal">/минута</span></span>
+                </div>
+                
+                <div className="flex items-center justify-between p-4 bg-primary/5 rounded-lg">
+                  <div className="flex items-center gap-3">
+                    <Icon name="MessageSquare" className="text-primary" size={24} />
+                    <span className="font-semibold">Анализ переписок</span>
+                  </div>
+                  <span className="text-2xl font-bold">2 ₽<span className="text-sm text-muted-foreground font-normal">/10K символов</span></span>
+                </div>
+              </div>
+              
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start gap-2">
+                  <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={18} />
+                  <span className="text-sm">Без ежемесячной абонентской платы</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={18} />
+                  <span className="text-sm">Неограниченное количество пользователей</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={18} />
+                  <span className="text-sm">Полный доступ ко всем возможностям</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={18} />
+                  <span className="text-sm">Интеграция с CRM и телефонией</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={18} />
+                  <span className="text-sm">Техническая поддержка 24/7</span>
+                </li>
+              </ul>
+              
+              <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-6 text-lg">
+                Начать работу
+              </Button>
+            </Card>
           </div>
         </div>
       </section>
@@ -241,44 +207,26 @@ const Index = () => {
             </p>
           </div>
 
-          <Card className="p-8 bg-card/80 border-border">
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Имя</label>
-                  <Input placeholder="Ваше имя" className="bg-background" />
+          <a 
+            href="https://t.me/echoai_support" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="block max-w-md mx-auto"
+          >
+            <Card className="p-12 bg-gradient-to-br from-primary/10 to-primary/5 border-2 border-primary/20 hover:border-primary transition-all hover:scale-105 cursor-pointer group">
+              <div className="flex flex-col items-center space-y-6">
+                <div className="w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-all group-hover:scale-110">
+                  <svg className="w-14 h-14 text-primary" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                  </svg>
                 </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Email</label>
-                  <Input type="email" placeholder="your@email.com" className="bg-background" />
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold mb-2">Написать в Telegram</h3>
+                  <p className="text-muted-foreground">Ответим в течение 15 минут</p>
                 </div>
               </div>
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Сообщение</label>
-                <Textarea 
-                  placeholder="Расскажите о вашем проекте..." 
-                  className="bg-background min-h-[120px]"
-                />
-              </div>
-              <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-6">
-                Отправить сообщение
-              </Button>
-            </form>
-          </Card>
-
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            {[
-              { icon: "Mail", title: "Email", value: "hello@echoai.ru" },
-              { icon: "Phone", title: "Телефон", value: "+7 (495) 123-45-67" },
-              { icon: "MapPin", title: "Адрес", value: "Москва, Россия" }
-            ].map((contact, i) => (
-              <div key={i} className="space-y-2">
-                <Icon name={contact.icon} className="text-primary mx-auto" size={28} />
-                <div className="font-semibold">{contact.title}</div>
-                <div className="text-sm text-muted-foreground">{contact.value}</div>
-              </div>
-            ))}
-          </div>
+            </Card>
+          </a>
         </div>
       </section>
 
@@ -296,14 +244,6 @@ const Index = () => {
             <p className="text-sm text-muted-foreground">
               © 2024 EchoAI. Все права защищены.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Icon name="Mail" size={20} />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Icon name="Phone" size={20} />
-              </a>
-            </div>
           </div>
         </div>
       </footer>
