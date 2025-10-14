@@ -18,11 +18,23 @@ const Index = () => {
             />
             <span className="text-2xl font-bold tracking-tight">EchoAI</span>
           </div>
-          <nav className="flex items-center gap-8">
-            <a href="#features" className="text-sm font-medium hover:text-primary transition-colors">Возможности</a>
-            <a href="#pricing" className="text-sm font-medium hover:text-primary transition-colors">Тарифы</a>
-            <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">Контакты</a>
-          </nav>
+          <div className="flex items-center gap-8">
+            <nav className="flex items-center gap-8">
+              <a href="#features" className="text-sm font-medium hover:text-primary transition-colors">Возможности</a>
+              <a href="#pricing" className="text-sm font-medium hover:text-primary transition-colors">Тарифы</a>
+              <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">Контакты</a>
+            </nav>
+            <a 
+              href="https://t.me/EchoAI_Product" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 transition-all group"
+            >
+              <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+              </svg>
+            </a>
+          </div>
         </div>
       </header>
 
@@ -43,9 +55,11 @@ const Index = () => {
               выявляет проблемы и помогает повысить эффективность продаж
             </p>
             <div className="flex justify-center pt-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg animate-glow">
-                Попробовать бесплатно
-              </Button>
+              <a href="https://t.me/EchoAI_CEO" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg animate-glow">
+                  Попробовать бесплатно
+                </Button>
+              </a>
             </div>
           </div>
 
@@ -61,6 +75,32 @@ const Index = () => {
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
               </Card>
             ))}
+          </div>
+
+          <div className="mt-16 max-w-3xl mx-auto">
+            <a 
+              href="https://docs.google.com/presentation/d/1VpeW7Z4xRS_lFf-GXb9jU9lcUHQsBTRa3atk-WwK4ck/edit?usp=sharing" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Card className="p-8 bg-card/50 border-border hover:border-primary transition-all hover:scale-[1.02] cursor-pointer group">
+                <div className="flex items-center gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center group-hover:from-green-500/30 group-hover:to-emerald-500/30 transition-all">
+                      <Icon name="FileSpreadsheet" className="text-green-600" size={40} />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold mb-2">Презентация продукта</h3>
+                    <p className="text-muted-foreground mb-4">Подробная информация о возможностях EchoAI, кейсах использования и результатах внедрения</p>
+                    <div className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
+                      <span>Открыть презентацию</span>
+                      <Icon name="ExternalLink" size={18} />
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </a>
           </div>
         </div>
       </section>
@@ -188,9 +228,11 @@ const Index = () => {
                 </li>
               </ul>
               
-              <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-6 text-lg">
-                Начать работу
-              </Button>
+              <a href="https://t.me/EchoAI_CEO" target="_blank" rel="noopener noreferrer" className="block">
+                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-6 text-lg">
+                  Начать работу
+                </Button>
+              </a>
             </Card>
           </div>
         </div>
@@ -208,7 +250,7 @@ const Index = () => {
           </div>
 
           <a 
-            href="https://t.me/echoai_support" 
+            href="https://t.me/EchoAI_CEO" 
             target="_blank" 
             rel="noopener noreferrer"
             className="block max-w-md mx-auto"
